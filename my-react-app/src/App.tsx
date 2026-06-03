@@ -88,16 +88,13 @@ function App(): JSX.Element {
         <button onClick={addTodo}>Add</button>
       </div>
 
-      {/* LIST */}
-      <h2>Tasks ordered by priority...</h2>
-
       {sortedTodos.length === 0 ? (
-        <p>No tasks yet.</p>
+        <p>No tasks yet...</p>
       ) : (
         sortedTodos.map((todo: Todo) => (
           <div key={todo.id} className="todo">
             <div>
-              <span className="priority">[P{todo.priority}]</span> {todo.name}
+              <span className="priority">#{todo.priority}</span> {todo.name}
             </div>
 
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>
